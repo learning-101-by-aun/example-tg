@@ -1,3 +1,7 @@
+resource "google_service_account" "default" {
+  account_id   = "demo-sa-ref-1"
+  display_name = "Custom SA for VM Instance"
+}
 # ------------------------------------------------------------------------------
 # CREATE A PUBLIC IP ADDRESS
 # ------------------------------------------------------------------------------
@@ -30,5 +34,10 @@ resource "google_compute_instance" "default" {
     access_config {
       nat_ip = google_compute_address.default.address
     }
+  }
+    service_account {
+    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    email  = google_service_account.default.email
+    scopes = var.scopes
   }
 }

@@ -57,3 +57,8 @@ variable "networks_name" {
   type        = string
   description = "Network Name"
 }
+
+variable "scopes" {
+  type        = list(string)
+  description = "Scopes"
+}
