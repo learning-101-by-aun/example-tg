@@ -1,0 +1,23 @@
+# Terraform
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform appply
+terraform appply --auto-approve
+terraform destroy
+terraform destroy --auto-approve
+
+# Terragrunt
+terragrunt init
+terragrunt fmt
+terragrunt validate
+terragrunt plan
+terragrunt appply
+terragrunt appply --auto-approve
+terragrunt destroy
+terragrunt destroy --auto-approve
+
+terragrunt run-all plan
+terragrunt run-all apply
+terragrunt run-all destroy
